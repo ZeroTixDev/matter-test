@@ -25,6 +25,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "improved-math": "^1.0.7",
     "matter-js": "^0.14.2"
   }
 }

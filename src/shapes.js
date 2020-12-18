@@ -3,7 +3,7 @@ const { Bodies, World } = require('matter-js');
 // MUAHAAHA IM EVIL
 const defaultOptions = {
    friction: 0.3,
-   restitution: 0.8,
+   restitution: 1,
 };
 module.exports = {
    Box: class Box {
@@ -16,6 +16,7 @@ module.exports = {
             height,
             options === null ? defaultOptions : { ...options, ...defaultOptions }
          );
+         this.body.inertia = 0.1;
          this.width = width;
          this.height = height;
          this.time = 0;
@@ -28,6 +29,9 @@ module.exports = {
             this.color = `hsl(${color}, 100%, 50%)`;
          }
          World.add(global.engine.world, [this.body]);
+      }
+      remove() {
+         World.remove(global.engine.world, [this.body]);
       }
    },
    Circle: class Circle {
@@ -45,6 +49,9 @@ module.exports = {
          this.body = Bodies.circle(x, y, radius, options === null ? defaultOptions : { ...options, ...defaultOptions });
          this.radius = radius;
          World.add(global.engine.world, [this.body]);
+      }
+      remove() {
+         World.remove(global.engine.world, [this.body]);
       }
    },
 };
