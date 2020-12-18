@@ -17,10 +17,9 @@ const plugins = [
    new CleanWebpackPlugin(),
    /* new BundleAnalyzerPlugin(), */
 ];
-module.exports = {
+const config = {
    entry: './src/index.js',
-   mode: 'development',
-   devtool: 'source-map',
+   mode: 'production',
    output: {
       filename: '[name].[contenthash].js',
       path: path.resolve(__dirname, 'dist'),
@@ -38,3 +37,4 @@ module.exports = {
       contentBase: path.join(__dirname, 'dist'),
    },
 };
+module.exports = config;

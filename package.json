@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve",
+    "start": "set NODE_ENV=production && webpack serve",
+    "dev": "set NODE_ENV=development && webpack serve",
     "build": "webpack"
   },
   "keywords": [],
