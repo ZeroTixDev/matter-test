@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "improved-math": "^1.0.7",
-    "matter-js": "^0.14.2"
+    "matter-js": "^0.14.2",
+    "pixi.js": "^6.0.4"
   }
 }
